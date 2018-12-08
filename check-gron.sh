@@ -1,5 +1,7 @@
 #!/bin/sh
 
+curl -i https://api.github.com/repos/tomnomnom/gron/tags
+
 LATEST="$(
 	curl -s https://api.github.com/repos/tomnomnom/gron/tags \
 		| grep name \
