@@ -4,3 +4,4 @@ script:
   - ./check-gron.sh
   - ./check-nexus-oss.sh
   - cat update.log || true
+  - ./send-mail.sh
