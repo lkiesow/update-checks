@@ -1,5 +1,5 @@
 #!/bin/sh
-set -uex
+set -ue
 
 FROM=no-reply@lkiesow.de
 SUBJECT='Update Notification'
@@ -29,8 +29,6 @@ payload="$(echo "$payload" |
 	jq --arg key "$SUBJECT" ".subject = \$key" |
 	jq --arg key "$(cat update.log)" ".content[].value = \$key"
 	)"
-
-echo "$payload"
 
 curl -f --request POST \
 	--url https://api.sendgrid.com/v3/mail/send \
