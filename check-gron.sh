@@ -2,8 +2,8 @@
 
 LATEST="$(
 	curl -s https://api.github.com/repos/tomnomnom/gron/tags \
-		| jq -r ".[].name" \
-		| sed 's/^v//' \
+		| grep name \
+		| sed 's/^.*"v\(.*\)".*$/\1/' \
 		| head -n1
 	)"
 
