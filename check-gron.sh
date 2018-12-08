@@ -1,11 +1,8 @@
 #!/bin/sh
 
-curl -i https://api.github.com/repos/tomnomnom/gron/tags
-
 LATEST="$(
-	curl -s https://api.github.com/repos/tomnomnom/gron/tags \
-		| grep name \
-		| sed 's/^.*"v\(.*\)".*$/\1/' \
+	curl -s 'https://github.com/tomnomnom/gron/releases' \
+		| sed -n 's_^.*href="/tomnomnom/gron/tree/v\([^"]*\)".*$_\1_p' \
 		| head -n1
 	)"
 
