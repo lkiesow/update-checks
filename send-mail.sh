@@ -30,7 +30,7 @@ payload="$(echo "$payload" |
 	jq --arg key "$(cat update.log)" ".content[].value = \$key"
 	)"
 
-curl -f --request POST \
+curl -s -f --request POST \
 	--url https://api.sendgrid.com/v3/mail/send \
 	--header "Authorization: Bearer $SENDGRID_API_KEY" \
 	--header 'Content-Type: application/json' \
