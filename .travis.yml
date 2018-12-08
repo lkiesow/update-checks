@@ -1,0 +1,6 @@
+sudo: false
+script:
+  - ./check-activemq.sh
+  - ./check-gron.sh
+  - ./check-nexus-oss.sh
+  - cat update.log || :
