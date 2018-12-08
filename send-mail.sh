@@ -30,7 +30,7 @@ payload="$(echo "$payload" |
 	jq --arg key "$(cat update.log)" ".content[].value = \$key"
 	)"
 
-echo "$payload" | jq
+echo "$payload"
 
 curl -f --request POST \
 	--url https://api.sendgrid.com/v3/mail/send \
