@@ -1,5 +1,5 @@
 #!/bin/sh
-set -ue
+set -uex
 
 FROM=no-reply@lkiesow.de
 SUBJECT='Update Notification'
@@ -24,16 +24,16 @@ payload='{
 	}'
 
 payload="$(echo "$payload" |
-    jq --arg key "$FROM" ".from.email = \$key" |
-    jq --arg key "$TO" ".personalizations[].to[].email = \$key" |
-    jq --arg key "$SUBJECT" ".subject = \$key" |
-	 jq --arg key "$(cat update.log)" ".content[].value = \$key"
-	 )"
+	jq --arg key "$FROM" ".from.email = \$key" |
+	jq --arg key "$TO" ".personalizations[].to[].email = \$key" |
+	jq --arg key "$SUBJECT" ".subject = \$key" |
+	jq --arg key "$(cat update.log)" ".content[].value = \$key"
+	)"
 
 echo "$payload" | jq
 
 curl -f --request POST \
-  --url https://api.sendgrid.com/v3/mail/send \
-  --header "Authorization: Bearer $SENDGRID_API_KEY" \
-  --header 'Content-Type: application/json' \
-  --data "${payload}"
+	--url https://api.sendgrid.com/v3/mail/send \
+	--header "Authorization: Bearer $SENDGRID_API_KEY" \
+	--header 'Content-Type: application/json' \
+	--data "${payload}"
