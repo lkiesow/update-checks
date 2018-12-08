@@ -2,6 +2,7 @@ sudo: false
 script:
   - ./check-activemq.sh
   - ./check-gron.sh
+  - ./check-intellij-idea-community.sh
   - ./check-nexus-oss.sh
   - cat update.log || true
   - ./send-mail.sh
