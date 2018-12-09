@@ -1,5 +1,5 @@
 #!/bin/sh
-set -ue
+set -uex
 
 FROM=no-reply@lkiesow.de
 SUBJECT='Update Notification'
