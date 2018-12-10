@@ -1,11 +1,11 @@
 #!/bin/sh
-set -uex
+set -ue
 
 FROM=no-reply@lkiesow.de
 SUBJECT='Update Notification'
 TO=update-notification@lkiesow.de
 
-[ -f update.log ] || exit
+[ -f update.log ] || exit 0
 
 payload='{
 	"personalizations": [
