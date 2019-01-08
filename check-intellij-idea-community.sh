@@ -1,11 +1,11 @@
 #!/bin/sh
 
 LATEST="$(
-	curl -s 'https://data.services.jetbrains.com/products/releases?code=IIC&latest=true&type=release' \
+	curl -s 'https://data.services.jetbrains.com/products/releases?code=IIC&latest=true&type=release'
 	)"
 
-version="$(echo "$LATEST" | jq -r '.IIC[0].version')"
-build="$(echo "$LATEST" | jq -r '.IIC[0].build')"
+version="$(printf "%s" "${LATEST}" | jq -r '.IIC[0].version')"
+build="$(printf "%s" "${LATEST}" | jq -r '.IIC[0].build')"
 LATEST="$version ($build)"
 
 PKG="$(
