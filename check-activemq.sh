@@ -1,8 +1,8 @@
 #!/bin/sh
 
 LATEST="$(
-	curl -s 'http://activemq.apache.org/download.html' \
-		| sed -n 's/^.*ActiveMQ \([0-9.]*\) Release.*$/\1/p'
+	curl -s 'https://activemq.apache.org/components/classic/download/' \
+		| sed -n 's/^.*apache-activemq-\([0-9.]*\)-bin\.tar\.gz<.*$/\1/p'
 	)"
 
 PKG="$(
