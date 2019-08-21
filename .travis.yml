@@ -1,6 +1,7 @@
 sudo: false
 script:
   - ./check-activemq.sh
+  - ./check-g810-led.sh
   - ./check-gron.sh
   - ./check-intellij-idea-community.sh
   - ./check-nexus-oss.sh
