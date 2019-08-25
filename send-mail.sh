@@ -7,6 +7,8 @@ TO=update-notification@lkiesow.de
 
 [ -f update.log ] || exit 0
 
+echo 'Updates available. Sending email…'
+
 payload='{
 	"personalizations": [
 		{
