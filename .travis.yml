@@ -4,6 +4,7 @@ script:
   - ./check-g810-led.sh
   - ./check-gron.sh
   - ./check-intellij-idea-community.sh
+  - ./check-minio.sh
   - ./check-nexus-oss.sh
   - cat update.log || true
   - ./send-mail.sh
