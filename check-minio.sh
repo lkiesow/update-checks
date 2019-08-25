@@ -19,5 +19,5 @@ PKG="$(
 echo "Package version: $PKG"
 
 if [ "$LATEST" != "$PKG" ]; then
-	printf '%-32s %s -> %s\n' 'gron' "$PKG" "$LATEST" >> update.log
+	printf '%-32s %s -> %s\n' 'minio' "$PKG" "$LATEST" >> update.log
 fi
