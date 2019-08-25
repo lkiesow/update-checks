@@ -5,6 +5,7 @@ script:
   - ./check-gron.sh
   - ./check-intellij-idea-community.sh
   - ./check-minio.sh
+  - ./check-minio-mc.sh
   - ./check-nexus-oss.sh
   - cat update.log || true
   - ./send-mail.sh
