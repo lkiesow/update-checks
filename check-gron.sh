@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SPECURL="https://copr-be.cloud.fedoraproject.org/results/lkiesow/gron/fedora-rawhide-x86_64/01138171-gron/gron.spec"
+
 echo "Checking gron"
 
 LATEST="$(
@@ -11,7 +13,7 @@ LATEST="$(
 echo "Latest version:  $LATEST"
 
 PKG="$(
-	curl -s 'https://copr-be.cloud.fedoraproject.org/results/lkiesow/gron/fedora-28-x86_64/00782488-gron/gron.spec' \
+	curl -s "${SPECURL}" \
 		| grep Version: \
 		| awk '{print $2}'
 	)"
