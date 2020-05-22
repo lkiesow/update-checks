@@ -7,5 +7,6 @@ script:
   - ./check-minio.sh
   - ./check-minio-mc.sh
   - ./check-nexus-oss.sh
+  - ./check-greenlight.sh
   - cat update.log || true
   - ./send-mail.sh
