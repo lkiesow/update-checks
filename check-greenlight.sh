@@ -17,6 +17,6 @@ DEPLOYED="$(
 
 echo "Deployed version: $DEPLOYED"
 
-if [ "$LATEST" != "DEPLOYED" ]; then
-	printf '%-32s %s -> %s\n' 'greenlight' "$PKG" "$LATEST" >> update.log
+if [ "$LATEST" != "$DEPLOYED" ]; then
+	printf '%-32s %s -> %s\n' 'greenlight' "$DEPLOYED" "$LATEST" >> update.log
 fi
