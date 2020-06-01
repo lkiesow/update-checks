@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SPECURL="https://copr-be.cloud.fedoraproject.org/results/lkiesow/gron/fedora-rawhide-x86_64/01138171-gron/gron.spec"
+SPECURL="https://src.fedoraproject.org/rpms/gron/raw/master/f/gron.spec"
 
 echo "Checking gron"
 
