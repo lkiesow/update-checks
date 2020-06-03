@@ -3,8 +3,9 @@
 echo "Checking ActiveMQ"
 
 LATEST="$(
-	curl -s 'https://activemq.apache.org/components/classic/download/' \
-		| sed -n 's/^.*apache-activemq-\([0-9.]*\)-bin\.tar\.gz<.*$/\1/p'
+	curl -s 'https://github.com/apache/activemq/releases' \
+		| sed -n 's_^.*href="/apache/activemq/releases/tag/activemq-\([^"]*\)".*$_\1_p' \
+		| head -n1
 	)"
 
 echo "Latest version:  $LATEST"
