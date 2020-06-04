@@ -12,7 +12,7 @@ echo "Latest version:  $LATEST"
 
 DEPLOYED="$(
 	curl -s -H 'Accept-Language: en' https://conference.opencast-niedersachsen.de/b \
-		| sed -n 's/^.*>Powered.*<\/a>\. *\([0-9.]*\)<\/p>.*$/\1/p'
+		| sed -n 's/^.*Powered.*<\/a>\. *\([0-9]*\.[0-9]*\.[0-9]*\).*$/\1/p'
 	)"
 
 echo "Deployed version: $DEPLOYED"
