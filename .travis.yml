@@ -1,12 +1,13 @@
 sudo: false
 script:
   - ./check-activemq.sh
+  - ./check-bigbluebutton.sh
   - ./check-g810-led.sh
+  - ./check-greenlight.sh
   - ./check-gron.sh
   - ./check-intellij-idea-community.sh
-  - ./check-minio.sh
   - ./check-minio-mc.sh
+  - ./check-minio.sh
   - ./check-nexus-oss.sh
-  - ./check-greenlight.sh
   - cat update.log || true
   - ./send-mail.sh
