@@ -4,7 +4,7 @@ echo "Checking BigBlueButton"
 
 LATEST="$(
 	curl -s 'https://github.com/bigbluebutton/bigbluebutton/releases' \
-		| sed -n 's_^.*href="/bigbluebutton/bigbluebutton/tree/v\([^"]*\)".*$_\1_p' \
+		| sed -n 's_^.*href="/bigbluebutton/bigbluebutton/tree/v\([^"-]*\)".*$_\1_p' \
 		| head -n1
 	)"
 
