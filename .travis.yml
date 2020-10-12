@@ -9,5 +9,6 @@ script:
   - ./check-minio-mc.sh
   - ./check-minio.sh
   - ./check-nexus-oss.sh
+  - ./check-prometheus.sh
   - cat update.log || true
   - ./send-mail.sh
