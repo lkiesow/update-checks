@@ -4,7 +4,7 @@ echo "Checking nexus-oss"
 
 LATEST="$(
 	curl -s -I -L http://download.sonatype.com/nexus/oss/nexus-latest-bundle.tar.gz \
-		| grep Location \
+		| grep -i location \
 		| tail -n1 \
    	| sed 's_^.*oss/nexus-\([0-9.]*\)-.*_\1_'
 	)"
