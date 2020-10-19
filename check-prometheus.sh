@@ -19,5 +19,5 @@ PKG="$(
 echo "Package version: $PKG"
 
 if [ "$LATEST" != "$PKG" ]; then
-	printf '%-32s %s -> %s\n' 'nexus-oss' "$PKG" "$LATEST" >> update.log
+	printf '%-32s %s -> %s\n' 'prometheus' "$PKG" "$LATEST" >> update.log
 fi
