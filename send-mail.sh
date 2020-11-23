@@ -3,7 +3,7 @@ set -ue
 
 FROM=no-reply@lkiesow.de
 SUBJECT='Update Notification'
-TO=update-notification@lkiesow.de
+TO=lkiesow@uos.de
 
 [ -f update.log ] || exit 0
 
